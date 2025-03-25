@@ -12,7 +12,7 @@ A Flask-based web application for skill exchange and learning community.
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/skillswap-py.git
-cd skillswap-py
+cd skillswap
 ```
 
 2. Create a virtual environment (recommended):
