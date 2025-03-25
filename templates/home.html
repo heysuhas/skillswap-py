@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1e1e2f;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(90deg, #003366, #004080); /* Darker gradient */
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white !important;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #d4d4d4 !important;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 90vh;
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero .btn {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Features Section Styling */
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        .feature-box h3 {
+            color: #007bff;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background: #343a40;
+            color: #d4d4d4;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">SkillSwap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Learn. Teach. Connect.</h1>
+            <p>SkillSwap is where knowledge meets opportunity.</p>
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Join Now</a>
+            <a href="#features" class="btn btn-outline-light">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container my-5" id="features">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Connect</h3>
+                    <p>Meet skilled professionals & expand your network.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-book-reader fa-3x"></i>
+                    <h3>Learn</h3>
+                    <p>Enhance your expertise with real-world mentors.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-exchange-alt fa-3x"></i>
+                    <h3>Exchange</h3>
+                    <p>Share your knowledge & gain valuable insights.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2025 SkillSwap. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
